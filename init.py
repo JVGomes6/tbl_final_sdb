@@ -1,0 +1,1 @@
+print = ("hewllo word")
