@@ -4,6 +4,8 @@ const express      = require('express')
 const connectDatabase = require('./config/database')
 const taskRoutes   = require('./routes/task.routes')
 const externalRoutes = require('./routes/external.routes')
+const cheapsharkRoutes = require('./routes/cheapshark.routes') //Rota necessaria da API //EXTERNO 
+const gameRoutes = require('./routes/game.routes') //Local CRUD
 
 const swaggerUi = require('swagger-ui-express')
 const swaggerSpec = require('./config/swagger')
@@ -23,6 +25,8 @@ app.get('/', (req, res) => {
 
 app.use('/tasks', taskRoutes)
 app.use('/external', externalRoutes)
+app.use('/cheapshark', cheapsharkRoutes) //Registrando a rota da API //EXTERNO 
+app.use('/games', gameRoutes) //Local CRUD
 
 app.use(
   '/api-docs',
@@ -35,5 +39,3 @@ const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`)
 })
-
-
