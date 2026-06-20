@@ -1,3 +1,4 @@
+const Task = require('../models/task.model')
 const externalService = require('../services/external.service')
 
 // GET /external/cep/:cep
@@ -47,4 +48,28 @@ async function getPosts(req, res) {
   }
 }
 
-module.exports = { getCep, getTempo, getPosts }
+// POST /external/importar-post
+async function importarPost(req, res) {
+  try {
+    const posts = await externalService.listarPosts()
+
+    const primeiroPost = posts[0]
+
+    const task = await Task.create({
+      title: primeiroPost.title,
+      description: primeiroPost.body,
+      completed: false
+    })
+
+    res.status(201).json(task)
+  } catch (error) {
+    res.status(500).json({
+      message: 'Erro ao importar post',
+      error: error.message
+    })
+  }
+}
+
+
+module.exports = { getCep, getTempo, getPosts, importarPost }
+

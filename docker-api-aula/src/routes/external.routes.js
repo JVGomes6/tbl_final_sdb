@@ -4,7 +4,8 @@ const router = express.Router()
 const {
   getCep,
   getTempo,
-  getPosts
+  getPosts,
+  importarPost
 } = require('../controllers/external.controller')
 
 
@@ -67,5 +68,24 @@ router.get('/tempo', getTempo)
  */
 
 router.get('/posts', getPosts)
+
+
+/**
+ * @swagger
+ * /external/importar-post:
+ *   post:
+ *     summary: Importa um post da API externa para o MongoDB
+ *     tags:
+ *       - External
+ *     responses:
+ *       201:
+ *         description: Task criada com sucesso
+ *       500:
+ *         description: Erro ao importar post
+ */
+
+
+
+router.post('/importar-post', importarPost)
 
 module.exports = router
