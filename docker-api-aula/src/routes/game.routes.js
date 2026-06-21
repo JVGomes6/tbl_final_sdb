@@ -57,6 +57,12 @@ router.post('/', controller.create)
 router.get('/', controller.findAll)
 
 /**
+ * Busca local por nome
+ * /games/search?name={nome}
+ */
+router.get('/search', controller.searchByName)
+
+/**
  * @swagger
  * /games/{id}:
  *   get:

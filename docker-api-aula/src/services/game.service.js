@@ -18,6 +18,13 @@ async function getGameById(id) {
   return await Game.findById(id)
 }
 
+// SEARCH BY NAME (partial, case-insensitive)
+async function findGamesByName(name, limit = 50) {
+  if (!name) return []
+  const q = new RegExp(name, 'i')
+  return await Game.find({ $or: [{ internalName: q }, { external: q }] }).limit(limit)
+}
+
 // UPDATE (PUT completo)
 async function updateGame(id, data) {
   return await Game.replaceOne({ _id: id }, data)
@@ -38,6 +45,7 @@ module.exports = {
   createGame,
   getGames,
   getGameById,
+  findGamesByName,
   updateGame,
   patchGame,
   deleteGame

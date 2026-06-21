@@ -18,10 +18,10 @@ const {
  *         required: true
  *         schema:
  *           type: string
- *         description: Nome do jogo (Ex: batman)
+ *         description: "Nome do jogo (Ex: batman)"
  *     responses:
  *       200:
- *         description: Jogos encontrados
+ *         description: "Jogos encontrados"
  *       404:
  *         description: Nenhum jogo encontrado
  *       500:

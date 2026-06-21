@@ -22,6 +22,14 @@ async function findById(req, res) {
   return res.json(game)
 }
 
+// SEARCH BY NAME
+async function searchByName(req, res) {
+  const { name } = req.query
+  if (!name) return res.status(400).json({ message: 'Query param "name" é obrigatório' })
+  const games = await service.findGamesByName(name)
+  return res.json(games)
+}
+
 // PUT
 async function update(req, res) {
   const game = await service.updateGame(req.params.id, req.body)
@@ -44,6 +52,7 @@ module.exports = {
   create,
   findAll,
   findById,
+  searchByName,
   update,
   patch,
   remove
