@@ -1,31 +1,30 @@
-# CheapShark API — Local Game Database
+CheapShark API  Local Game Database
 
-Uma API Node.js + Express + MongoDB que consome a API externa **CheapShark** para buscar jogos, salva os resultados localmente no MongoDB e oferece uma interface web para gerenciamento local dos dados.
+Uma API Node.js + Express + MongoDB que consome a API externa CheapShark para buscar jogos, salva os resultados localmente no MongoDB e oferece uma interface web para gerenciamento local dos dados.
+
+---
+Funcionalidades
+
+Busca Externa: Integração com API CheapShark para buscar jogos por título
+Persistência Automática: Resultados são salvos automaticamente no MongoDB local (upsert)
+Busca Local: Pesquisa jogos já salvos por nome (case-insensitive)
+CRUD Completo: Criar, ler, atualizar (total e parcial) e deletar jogos localmente
+Frontend Web: Interface para buscar e visualizar dados
+Documentação Swagger**: API documentada em `/api-docs`
+Docker Compose**: Ambiente completo (API, MongoDB, Mongo Express)
 
 ---
 
-## 🎯 Funcionalidades
-
-- ✅ **Busca Externa**: Integração com API CheapShark para buscar jogos por título
-- ✅ **Persistência Automática**: Resultados são salvos automaticamente no MongoDB local (upsert)
-- ✅ **Busca Local**: Pesquisa jogos já salvos por nome (case-insensitive)
-- ✅ **CRUD Completo**: Criar, ler, atualizar (total e parcial) e deletar jogos localmente
-- ✅ **Frontend Web**: Interface para buscar e visualizar dados
-- ✅ **Documentação Swagger**: API documentada em `/api-docs`
-- ✅ **Docker Compose**: Ambiente completo (API, MongoDB, Mongo Express)
-
----
-
-## 📋 Requisitos
+Requisitos
 
 - **Docker** e **Docker Compose** (recomendado)
 - Ou localmente: **Node.js 20+**, **npm**, **MongoDB 6+**
 
 ---
 
-## 🚀 Como Rodar
+Como Rodar
 
-### Opção 1: Com Docker Compose (Recomendado)
+Opção 1: Com Docker Compose (Recomendado)
 
 ```bash
 # Clonar ou acessar o projeto
@@ -38,12 +37,12 @@ docker compose up -d
 ```
 
 Serviços ficarão disponíveis em:
-- **API**: http://localhost:3000
-- **Frontend**: http://localhost:3000/ui
-- **Swagger**: http://localhost:3000/api-docs
-- **MongoDB Express**: http://localhost:8081 (admin / admin123)
+- API: http://localhost:3000
+- Frontend: http://localhost:3000/ui
+- Swagger: http://localhost:3000/api-docs
+- MongoDB Express: http://localhost:8081 (admin / admin123)
 
-### Opção 2: Localmente (sem Docker)
+Opção 2: Localmente (sem Docker)
 
 ```bash
 # Instalar dependências
@@ -61,7 +60,7 @@ npm run dev
 
 ---
 
-## 📁 Estrutura de Pastas
+Estrutura de Pastas
 
 ```
 docker-api-aula/
@@ -102,9 +101,9 @@ docker-api-aula/
 
 ---
 
-## 🔌 Endpoints Principais
+Endpoints Principais
 
-### Games (CRUD Local)
+Games (CRUD Local)
 
 | Método | Endpoint | Descrição |
 |--------|----------|-----------|
@@ -116,20 +115,20 @@ docker-api-aula/
 | `PATCH` | `/games/:id` | Atualização parcial de jogo |
 | `DELETE` | `/games/:id` | Deletar jogo |
 
-### CheapShark (Integração Externa)
+CheapShark (Integração Externa)
 
 | Método | Endpoint | Descrição |
 |--------|----------|-----------|
 | `GET` | `/cheapshark/games/:title` | Buscar jogos na API externa **e salvar localmente** |
 
-**Exemplo:**
+Exemplo:
 ```bash
 curl http://localhost:3000/cheapshark/games/naruto
 ```
 
 Resultado: Array de jogos salvos no MongoDB.
 
-### Health Check
+Health Check
 
 | Método | Endpoint | Descrição |
 |--------|----------|-----------|
@@ -137,7 +136,7 @@ Resultado: Array de jogos salvos no MongoDB.
 
 ---
 
-## 📊 Schema de Dados (Game)
+Schema de Dados (Game)
 
 ```javascript
 {
@@ -153,9 +152,8 @@ Resultado: Array de jogos salvos no MongoDB.
 }
 ```
 
----
 
-## 🎨 Frontend (`/ui`)
+Frontend (`/ui`)
 
 Acesse **http://localhost:3000/ui** para:
 
@@ -170,26 +168,26 @@ Acesse **http://localhost:3000/ui** para:
 
 ---
 
-## 🔍 Exemplos de Uso
+Exemplos de Uso
 
-### Via cURL
+Via cURL
 
-**Buscar na CheapShark e salvar localmente:**
+Buscar na CheapShark e salvar localmente:
 ```bash
 curl http://localhost:3000/cheapshark/games/naruto
 ```
 
-**Buscar localmente por nome:**
+Buscar localmente por nome:
 ```bash
 curl "http://localhost:3000/games/search?name=naruto"
 ```
 
-**Listar todos os jogos salvos:**
+Listar todos os jogos salvos:
 ```bash
 curl http://localhost:3000/games
 ```
 
-**Criar um jogo manualmente:**
+Criar um jogo manualmente:
 ```bash
 curl -X POST http://localhost:3000/games \
   -H "Content-Type: application/json" \
@@ -200,12 +198,12 @@ curl -X POST http://localhost:3000/games \
   }'
 ```
 
-**Deletar um jogo:**
+Deletar um jogo:
 ```bash
 curl -X DELETE http://localhost:3000/games/{id}
 ```
 
-### Via PowerShell
+Via PowerShell
 
 ```powershell
 # Buscar
@@ -221,26 +219,26 @@ Invoke-RestMethod -Uri 'http://localhost:3000/games/search?name=naruto'
 
 ---
 
-## ⚙️ Variáveis de Ambiente (.env)
+Variáveis de Ambiente (.env)
 
 ```env
 PORT=3000                                    # Porta da API
 MONGO_URL=mongodb://mongo:27017/docker_api_aula  # URL MongoDB
 ```
 
-**Notas:**
+Notas:
 - Em Docker Compose, use `mongodb://mongo:27017/...` (serviço `mongo`)
 - Localmente, use `mongodb://localhost:27017/...` ou string de conexão remota
 
 ---
 
-## 📚 Documentação Swagger
+Documentação Swagger
 
 Acesse http://localhost:3000/api-docs para explorar interativamente todos os endpoints documentados.
 
 ---
 
-## 🔄 Fluxo de Dados
+Fluxo de Dados
 
 ```
 Usuário busca "naruto" no /ui
@@ -262,9 +260,9 @@ Frontend renderiza lista de jogos
 
 ---
 
-## 🛠️ Troubleshooting
+Troubleshooting
 
-### Erro: "Impossível conectar ao MongoDB"
+Erro: "Impossível conectar ao MongoDB"
 
 ```bash
 # Verificar se containers estão rodando
@@ -278,19 +276,19 @@ docker compose down -v
 docker compose up -d
 ```
 
-### Erro: "Route.get() requires a callback"
+Erro: "Route.get() requires a callback"
 
 Significa que uma função de controlador não foi exportada corretamente. Verifique `module.exports` em:
 - `src/controllers/game.controller.js`
 - `src/services/game.service.js`
 
-### API não retorna dados após busca
+API não retorna dados após busca
 
 1. Verifique conexão com MongoDB (ver logs: `docker compose logs api`)
 2. Confirme que a API externa (CheapShark) está acessível
 3. Teste manualmente em http://localhost:3000/games para ver se há dados
 
-### Limpar base de dados completa
+Limpar base de dados completa
 
 ```bash
 docker compose down -v              # Remove volumes do Mongo
@@ -299,7 +297,7 @@ docker compose up -d                # Recria tudo limpo
 
 ---
 
-## 📦 Dependências Principais
+Dependências Principais
 
 - **express**: Framework web
 - **mongoose**: ODM para MongoDB
@@ -309,7 +307,7 @@ docker compose up -d                # Recria tudo limpo
 
 ---
 
-## 🐳 Serviços Docker
+Serviços Docker
 
 | Serviço | Imagem | Porta | Função |
 |---------|--------|-------|--------|
@@ -319,7 +317,7 @@ docker compose up -d                # Recria tudo limpo
 
 ---
 
-## 📝 Notas de Desenvolvimento
+Notas de Desenvolvimento
 
 - **Frontend estático**: Servido em `/ui` a partir de `src/frontend/`
 - **Busca local case-insensitive**: Usa RegExp com flag `i`
@@ -328,16 +326,16 @@ docker compose up -d                # Recria tudo limpo
 
 ---
 
-## 🎓 Como Estender o Projeto
+Como Estender o Projeto
 
-### Adicionar nova rota
+Adicionar nova rota
 
 1. Criar arquivo em `src/routes/novo.routes.js`
 2. Implementar controlador em `src/controllers/novo.controller.js`
 3. Implementar serviço em `src/services/novo.service.js`
 4. Registrar em `src/app.js`: `app.use('/novo', require('./routes/novo.routes.js'))`
 
-### Adicionar novo modelo
+Adicionar novo modelo
 
 1. Criar arquivo em `src/models/novo.model.js` com Mongoose Schema
 2. Exportar: `module.exports = mongoose.model('Novo', NovoSchema)`
@@ -345,19 +343,19 @@ docker compose up -d                # Recria tudo limpo
 
 ---
 
-## 📄 Licença
+Licença
 
 Projeto de aula — Livre para uso educacional.
 
 ---
 
-## 👤 Autor
+Autor
 
 Desenvolvido como exemplo de integração entre APIs externas, MongoDB e Node.js.
 
 ---
 
-## ❓ Suporte
+Suporte
 
 Para dúvidas ou problemas:
 1. Verifique logs: `docker compose logs`
