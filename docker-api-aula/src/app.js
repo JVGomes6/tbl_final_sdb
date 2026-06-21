@@ -3,8 +3,6 @@ require('dotenv').config()
 const express      = require('express')
 const path = require('path')
 const connectDatabase = require('./config/database')
-const taskRoutes   = require('./routes/task.routes')
-const externalRoutes = require('./routes/external.routes')
 const cheapsharkRoutes = require('./routes/cheapshark.routes') //Rota necessaria da API //EXTERNO 
 const gameRoutes = require('./routes/game.routes') //Local CRUD
 
@@ -26,9 +24,6 @@ app.get('/', (req, res) => {
   })
 })
 
-
-app.use('/tasks', taskRoutes)
-app.use('/external', externalRoutes)
 app.use('/cheapshark', cheapsharkRoutes) //Registrando a rota da API //EXTERNO 
 app.use('/games', gameRoutes) //Local CRUD
 

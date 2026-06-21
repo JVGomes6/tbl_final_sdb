@@ -33,13 +33,13 @@ async function searchByName(req, res) {
 // PUT
 async function update(req, res) {
   const game = await service.updateGame(req.params.id, req.body)
-  return res.json(game)
+  return res.json({message: 'Atualizado com sucesso' })
 }
 
 // PATCH
 async function patch(req, res) {
   const game = await service.patchGame(req.params.id, req.body)
-  return res.json(game)
+    return res.json({message: 'Atualizado parcialmente com sucesso' })
 }
 
 // DELETE
