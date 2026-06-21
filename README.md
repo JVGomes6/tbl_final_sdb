@@ -1,5 +1,5 @@
 # CheapShark API — Local Game Database
-
+.
 Este repositório contém uma API Node.js (Express) que integra a API externa CheapShark, persiste resultados no MongoDB e oferece uma interface web simples para pesquisa e gerenciamento dos dados.
 
 ## Objetivo
