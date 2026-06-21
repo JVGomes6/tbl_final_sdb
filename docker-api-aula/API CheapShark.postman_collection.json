@@ -1,0 +1,198 @@
+{
+  "info": {
+    "_postman_id": "2b20a32b-3790-4a0c-95be-044d4b2592fa",
+    "name": "API CheapShark",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54730115",
+    "_collection_link": "https://go.postman.co/collection/54730115-2b20a32b-3790-4a0c-95be-044d4b2592fa?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Buscar Todos (Todos)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{host}}/games/",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "games",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar por ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{host}}/games/6a370ab22a8930ab91f934d8",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "games",
+            "6a370ab22a8930ab91f934d8"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar por Nome",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{host}}/games/search?name=naruto",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "games",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "naruto"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar API Original",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{host}}/cheapshark/games/naruto",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "cheapshark",
+            "games",
+            "naruto"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Inserir",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"gameID\": \"string\",\r\n  \"steamAppID\": \"string\",\r\n  \"cheapest\": 0,\r\n  \"cheapestDealID\": \"string\",\r\n  \"external\": \"string\",\r\n  \"internalName\": \"string\",\r\n  \"thumb\": \"string\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{host}}/games/",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "games",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Atualizar por ID (Parcial)",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"_id\": \"6a373030bf6c48f0959b44e6\",\r\n    \"gameID\": \"172393\",\r\n    \"__v\": 0,\r\n    \"cheapest\": 6666,\r\n    \"cheapestDealID\": \"MBe9De6n8CVT%2BeltHyfv%2FluYeHnVvb94CcAmCEwBOuA%3D\",\r\n    \"createdAt\": \"2026-06-21T00:28:32.400Z\",\r\n    \"external\": \"NARUTO: Ultimate Ninja STORM\",\r\n    \"internalName\": \"NARUTOULTIMATENINJASTORM\",\r\n    \"steamAppID\": \"495140\",\r\n    \"thumb\": \"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/495140/capsule_231x87.jpg?t=1701305352\",\r\n    \"updatedAt\": \"2026-06-21T01:36:16.037Z\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{host}}/games/6a373030bf6c48f0959b44e6",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "games",
+            "6a373030bf6c48f0959b44e6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Atualizar por ID(Total)",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"gameID\": \"1223\",\r\n  \"steamAppID\": \"string\",\r\n  \"cheapest\": 0,\r\n  \"cheapestDealID\": \"string\",\r\n  \"external\": \"Nome\",\r\n  \"internalName\": \"string\",\r\n  \"thumb\": \"string\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{host}}/games/6a373030bf6c48f0959b44e6",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "games",
+            "6a373030bf6c48f0959b44e6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Deletar por ID",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{host}}/games/6a370ab22a8930ab91f934d8",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "games",
+            "6a370ab22a8930ab91f934d8"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
