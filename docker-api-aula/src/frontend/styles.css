@@ -1,0 +1,9 @@
+body{font-family:Inter, system-ui, Arial, sans-serif;margin:24px;background:#f7f7fb}
+main{max-width:980px;margin:0 auto}
+.search{display:flex;gap:8px;margin-bottom:12px}
+input#title{flex:1;padding:8px}
+button{padding:8px 12px}
+.game{display:flex;gap:12px;align-items:center;padding:8px;background:#fff;border-radius:6px;margin:6px 0}
+.game.small{padding:6px;background:transparent}
+.game img{width:72px;height:36px;object-fit:cover}
+.game .meta{display:flex;flex-direction:column}

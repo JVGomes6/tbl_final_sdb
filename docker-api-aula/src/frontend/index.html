@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CheapShark UI</title>
+    <link rel="stylesheet" href="/ui/styles.css" />
+  </head>
+  <body>
+    <main>
+      <h1>CheapShark — Buscar e salvar</h1>
+
+      <section class="search">
+        <input id="title" placeholder="Digite o título (ex: naruto)" />
+        <button id="searchBtn">Buscar e salvar</button>
+      </section>
+
+      <section>
+        <h2>Resultados (gravados localmente)</h2>
+        <div id="results"></div>
+      </section>
+
+      <section>
+        <h2>Jogos salvos na base</h2>
+        <button id="refreshSaved">Atualizar lista local</button>
+        <div id="saved"></div>
+      </section>
+    </main>
+
+    <script src="/ui/app.js"></script>
+  </body>
+</html>

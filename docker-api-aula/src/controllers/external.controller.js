@@ -51,7 +51,7 @@ async function getPosts(req, res) {
 // POST /external/importar-post
 async function importarPost(req, res) {
   try {
-    const posts = await externalService.listarPosts()
+    const posts = await externalService.getGames()
 
     const primeiroPost = posts[0]
 

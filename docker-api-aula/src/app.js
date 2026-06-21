@@ -1,6 +1,7 @@
 require('dotenv').config()
 
 const express      = require('express')
+const path = require('path')
 const connectDatabase = require('./config/database')
 const taskRoutes   = require('./routes/task.routes')
 const externalRoutes = require('./routes/external.routes')
@@ -13,6 +14,9 @@ const swaggerSpec = require('./config/swagger')
 const app = express()
 
 app.use(express.json())
+
+// Servir frontend estático em /ui
+app.use('/ui', express.static(path.join(__dirname, 'frontend')))
 
 connectDatabase()
 
