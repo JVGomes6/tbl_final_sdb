@@ -6,13 +6,13 @@ Uma API Node.js + Express + MongoDB que consome a API externa **CheapShark** par
 
 ## Funcionalidades
 
-- ✅ **Busca Externa**: Integração com API CheapShark para buscar jogos por título
-- ✅ **Persistência Automática**: Resultados são salvos automaticamente no MongoDB local (upsert)
-- ✅ **Busca Local**: Pesquisa jogos já salvos por nome (case-insensitive)
-- ✅ **CRUD Completo**: Criar, ler, atualizar (total e parcial) e deletar jogos localmente
-- ✅ **Frontend Web**: Interface para buscar e visualizar dados
-- ✅ **Documentação Swagger**: API documentada em `/api-docs`
-- ✅ **Docker Compose**: Ambiente completo (API, MongoDB, Mongo Express)
+- **Busca Externa**: Integração com API CheapShark para buscar jogos por título
+- **Persistência Automática**: Resultados são salvos automaticamente no MongoDB local (upsert)
+- **Busca Local**: Pesquisa jogos já salvos por nome (case-insensitive)
+- **CRUD Completo**: Criar, ler, atualizar (total e parcial) e deletar jogos localmente
+- **Frontend Web**: Interface para buscar e visualizar dados
+- **Documentação Swagger**: API documentada em `/api-docs`
+- **Docker Compose**: Ambiente completo (API, MongoDB, Mongo Express)
 
 ---
 
