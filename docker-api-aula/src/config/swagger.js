@@ -9,7 +9,9 @@ const options = {
       description: 'API de Tasks com MongoDB'
     }
   },
-  apis: ['./src/routes/*.js']
+  apis: ['./src/routes/*.js',
+        './routes/**/*.js',
+  ]
 }
 
 module.exports = swaggerJsdoc(options)

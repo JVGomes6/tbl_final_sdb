@@ -12,6 +12,13 @@ const swaggerSpec = require('./config/swagger')
 const app = express()
 
 app.use(express.json())
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*')
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE')
+  res.header('Access-Control-Allow-Headers', 'Content-Type')
+  next()
+})
+
 
 // Servir frontend estático em /ui
 app.use('/ui', express.static(path.join(__dirname, 'frontend')))

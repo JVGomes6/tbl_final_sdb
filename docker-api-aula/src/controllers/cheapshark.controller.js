@@ -22,6 +22,34 @@ async function getGames(req, res) {
   }
 }
 
+async function findDeals(req, res) {
+  try {
+    const { id } = req.params
+
+    //const result = await gameService.getGameDeals(id)
+    const result = await cheapsharkService.getGameDeals(id)
+    return res.status(200).json(result)
+  } catch (error) {
+    return res.status(500).json({
+      error: error.message
+    })
+  }
+}
+
+async function findDealsByTitle(req, res) {
+  try {
+    const { title } = req.params
+
+    const result = await cheapsharkService.getGameDealsByTitle(title)
+
+    return res.json(result)
+  } catch (error) {
+    return res.status(500).json({
+      error: error.message
+    })
+  }
+}
+
 module.exports = {
-  getGames
+  getGames, findDeals, findDealsByTitle
 }
