@@ -4,7 +4,7 @@ Uma API Node.js + Express + MongoDB que consome a API externa **CheapShark** par
 
 ---
 
-## 🎯 Funcionalidades
+## Funcionalidades
 
 - ✅ **Busca Externa**: Integração com API CheapShark para buscar jogos por título
 - ✅ **Persistência Automática**: Resultados são salvos automaticamente no MongoDB local (upsert)
@@ -16,14 +16,14 @@ Uma API Node.js + Express + MongoDB que consome a API externa **CheapShark** par
 
 ---
 
-## 📋 Requisitos
+##  Requisitos
 
 - **Docker** e **Docker Compose** (recomendado)
 - Ou localmente: **Node.js 20+**, **npm**, **MongoDB 6+**
 
 ---
 
-## 🚀 Como Rodar
+##  Como Rodar
 
 ### Opção 1: Com Docker Compose (Recomendado)
 
@@ -56,7 +56,7 @@ npm run dev
 
 ---
 
-## 📁 Estrutura de Pastas
+## Estrutura de Pastas
 
 ```
 docker-api-aula/
@@ -97,7 +97,7 @@ docker-api-aula/
 
 ---
 
-## 🔌 Endpoints Principais
+## Endpoints Principais
 
 ### Games (CRUD Local)
 
@@ -132,7 +132,7 @@ Resultado: Array de jogos salvos no MongoDB.
 
 ---
 
-## 📊 Schema de Dados (Game)
+##  Schema de Dados (Game)
 
 ```javascript
 {
@@ -150,7 +150,7 @@ Resultado: Array de jogos salvos no MongoDB.
 
 ---
 
-## 🎨 Frontend (`/ui`)
+##  Frontend (`/ui`)
 
 Acesse **http://localhost:3000/ui** para:
 
@@ -165,7 +165,7 @@ Acesse **http://localhost:3000/ui** para:
 
 ---
 
-## 🔍 Exemplos de Uso
+##  Exemplos de Uso
 
 ### Via cURL
 
@@ -216,7 +216,7 @@ Invoke-RestMethod -Uri 'http://localhost:3000/games/search?name=naruto'
 
 ---
 
-## ⚙️ Variáveis de Ambiente (.env)
+##  Variáveis de Ambiente (.env)
 
 ```env
 PORT=3000                                    # Porta da API
@@ -229,13 +229,13 @@ MONGO_URL=mongodb://mongo:27017/docker_api_aula  # URL MongoDB
 
 ---
 
-## 📚 Documentação Swagger
+##  Documentação Swagger
 
 Acesse http://localhost:3000/api-docs para explorar interativamente todos os endpoints documentados.
 
 ---
 
-## 🔄 Fluxo de Dados
+##  Fluxo de Dados
 
 ```
 Usuário busca "naruto" no /ui
@@ -257,7 +257,7 @@ Frontend renderiza lista de jogos
 
 ---
 
-## 🛠️ Troubleshooting
+##  Troubleshooting
 
 ### Erro: "Impossível conectar ao MongoDB"
 
@@ -288,7 +288,7 @@ docker compose up -d                # Recria tudo limpo
 
 ---
 
-## 📦 Dependências Principais
+##  Dependências Principais
 
 - **express**: Framework web
 - **mongoose**: ODM para MongoDB
@@ -298,7 +298,7 @@ docker compose up -d                # Recria tudo limpo
 
 ---
 
-## 🐳 Serviços Docker
+##  Serviços Docker
 
 | Serviço | Imagem | Porta | Função |
 |---------|--------|-------|--------|
@@ -308,7 +308,7 @@ docker compose up -d                # Recria tudo limpo
 
 ---
 
-## 📝 Notas de Desenvolvimento
+##  Notas de Desenvolvimento
 
 - **Frontend estático**: Servido em `/ui` a partir de `src/frontend/`
 - **Busca local case-insensitive**: Usa RegExp com flag `i`
@@ -317,7 +317,7 @@ docker compose up -d                # Recria tudo limpo
 
 ---
 
-## 🎓 Como Estender o Projeto
+##  Como Estender o Projeto
 
 ### Adicionar nova rota
 
@@ -334,19 +334,19 @@ docker compose up -d                # Recria tudo limpo
 
 ---
 
-## 📄 Licença
+##  Licença
 
 Projeto de aula — Livre para uso educacional.
 
 ---
 
-## 👤 Autor
+##  Autor
 
 Desenvolvido como exemplo de integração entre APIs externas, MongoDB e Node.js.
 
 ---
 
-## ❓ Suporte
+##  Suporte
 
 Para dúvidas ou problemas:
 1. Verifique logs: `docker compose logs`
